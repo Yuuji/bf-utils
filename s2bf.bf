@@ -21,7 +21,7 @@
 		S7: 0x3C (st)
 		S8: 0x2E (point)
 
-[-]++++++++++[>+++++++++>+++++++++>++++>++++>++++++>++++++>+++++<<<<<<<-]
+<[-]++++++++++[>+>+++++++++>+++++++++>++++>++++>++++++>++++++>+++++<<<<<<<<-]>
 >+
 >+++
 >+++
@@ -72,13 +72,84 @@
 		Move the chars net so S11
 <<<[[>>+<<-]<]>>>[>]
 
+		Move the content 3 right and insert a space before first 0x04
+>[-]++++>----[++++>----]++++>----[++++>----]++++
+[>>>>+<<<<-]<----[++++[>>>>+<<<<-]<----]++++[>>>>+<<<<-]<----[++++[>>>+<<<-]<----]
+
+
 		Ok; we have everything we need
 		First the init loop
 
 		Output ten times plus
-++++++++++[<<<<<.>>>>>-]
+<++++++++++[<<<<<.>>>>>-]
 
 		Output the open bracket
 <<<<<<<.>>>>>>>
 
-		Todo: Division \o/
+		Now the copy part
+>>>>>
+----[++++
+			Move the count of chars
+	<[>>+<<-]>
+
+			x = x / 10
+	<<<<<[-]>[-]>[-]>[-]>[-]++++++++++
+
+	>[<<<<<+>>>>>-]
+	<<<<<[
+		>>>>[<<<+>+>>-]
+		<<[>>+<<-]
+		<[
+			>+
+			<<-[>>[-]>+<<<-]
+			>>>[<<<+>>>-]
+			<[
+				<-
+				[>>>>-<<<<[-]]+
+			>-]
+		<-]
+		>>>>+
+	<<<<<]
+	>>>>[-]>
+
+			Output the gt
+	<<<<<<<<.>>>>>>>>
+
+			Ouput the pluses
+	[<<<<<<<<<<.>>>>>>>>>>-]
+
+			Remember the count of the chars
+	>+<
+
+			And move the chars two right
+	<<<<<<[[>>+<<-]<]>>>[>]>>>>>
+----]++++
+
+		Output the lt
+<[<<<<<<.>>>>>>-]>
+		
+		Output the minus; the bracket and an enter
+<<<<<<<<<.<<.<<.>>>>>>>>>>>>>
+[-]>
+----[++++
+			x mod 10
+	<[-]++++++++++
+	>[-<-[<+<<]<[+[->+<]<+<<]>>>>>]
+
+			Output a gt
+	<<<<<<<<<.>>>>>>>>>
+			Result ist two left
+			Output x times plus
+	<<[<<<<<<<<<.>>>>>>>>>-]>>
+			Output an enter
+	<<<<<<<<<<<<<<.>>>>>>>>>>>>>>
+
+			Remove the temp vars
+	[-]<[-]<[-]<[-]<[-]<[-]<[-]
+		
+			And move the chars one right
+	<[[>+<-]<]>>>[>]
+
+			Move pointer to next char
+	>>>>>>
+----]++++
