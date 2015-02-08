@@ -1,0 +1,4 @@
+#!/usr/local/bin/node
+var bfrequire = require('../node_modules/node-brainfuckex/').require;
+process.chdir('../');
+bfrequire('s2bf.bf')([process.argv[2]]);
